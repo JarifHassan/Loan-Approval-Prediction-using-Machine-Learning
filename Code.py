@@ -67,5 +67,18 @@ from sklearn.svm import SVC
 from sklearn.linear_model import LogisticRegression
 from sklearn import metrics
 
+knn = KNeighborsClassifier(n_neighbors=3)
+rfc = RandomForestClassifier(n_estimators= 7,
+                             criterion= 'entropy',
+                             random_state=  7)
+svc = SVC()
 
+lc = LogisticRegression()
+
+for clf in (rfc, knn, svc,lc):
+    clf.fit(X_train, Y_train)
+    Y_pred = clf.predict(X_train)
+    print("Accuracy score of",
+          clf._class_._name_,
+          "=", 100*metrics.accuracy_score(Y_train, Y_pred))
 
