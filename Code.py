@@ -79,6 +79,6 @@ for clf in (rfc, knn, svc,lc):
     clf.fit(X_train, Y_train)
     Y_pred = clf.predict(X_train)
     print("Accuracy score of",
-          clf._class_._name_,
+          clf.__class__.__name__,
           "=", 100*metrics.accuracy_score(Y_train, Y_pred))
 
