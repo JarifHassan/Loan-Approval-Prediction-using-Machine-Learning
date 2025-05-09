@@ -42,3 +42,8 @@ print('Catagorical variables:', len(list(obj[obj].index)))
 plt.figure(figsize=(12,6))
 sns.heatmap(data.corr(), cmap='BrBG', fmt= '.2f',
             linewidth =2, annot=True)
+
+sns.catplot(x='Gender', y='Married',
+            hue="Loan_Status",
+            kind="bar",
+            data=data)
